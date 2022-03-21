@@ -67,7 +67,6 @@ namespace Hangman_Rus
                     do
                     {
                         string ans = Console.ReadLine();
-                        //isValid = char.TryParse(ans.ToLower(), out input) && !string.IsNullOrWhiteSpace(ans) && !ans.Any(char.IsSeparator) && !ans.Any(char.IsPunctuation) && !ans.Any(char.IsDigit) && !ans.Any(char.IsSymbol);
                         isValid = char.TryParse(ans.ToLower(), out input) && !string.IsNullOrWhiteSpace(ans) && ans.Any(char.IsLetter);
 
                         if (!isValid && ans != cheatCode)
@@ -103,7 +102,6 @@ namespace Hangman_Rus
                     {
                         Console.Clear();
                         Console.WriteLine("К сожалению, такой буквы нет!");
-                        //Console.WriteLine("Пробуйте еще!");
                     }
                     else
                     {
@@ -168,7 +166,7 @@ namespace Hangman_Rus
                 int lineCount = File.ReadLines("WordsStockRus.txt").Count();
 
                 Random rnd = new Random();
-                int randomLine = rnd.Next(0, lineCount + 1);
+                int randomLine = rnd.Next(0, lineCount);
 
                 string guessWord = File.ReadLines("WordsStockRus.txt").ElementAtOrDefault(randomLine);
 
@@ -280,7 +278,6 @@ namespace Hangman_Rus
 
             _Board = board;
 
-            //DrawBoard();
         }
 
         private void DrawBoard()
