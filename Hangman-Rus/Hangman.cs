@@ -21,7 +21,6 @@ namespace Hangman_Rus
         enum States { Exists, NotExists, AlreadyTaken }
 
 
-
         public void Start()
         {
             bool firstStart = true;
